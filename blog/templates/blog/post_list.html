@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html>
-<title> Aprendendo Django </title>
+  <head>
+    <title> Aprendendo Django </title>
 
 
-<body>
-<h1>Teste 123 Testando</h1>
+  </head>
 
-<p>Paragrafo</p>
+  <body>
 
-</body>
+    <div>
+      <h1>Blog Aprendendo Django</h1>
+    </div>
+
+
+    {% for post in posts %}
+      <div>
+        <p>Publicado em: {{ post.published_date }} </p>
+        <h1> <a href=""> {{ post.title }} </a>M/h1>
+        <p>{{ post.text | linebreaksbr }} </p>
+      </div>
+
+    {% endfor %}
+  </body>
 </html>
